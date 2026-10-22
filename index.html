@@ -1,41 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phase 0-1: HTML基礎確認</title>
+    <style>
+        #clock {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2b4cd8;
+        }
+    </style>
 </head>
 <body>
+    <h2>現在時刻</h2>
+    <p id="clock">--:--:--</p>
+
     <h1>🌐 Phase 0-1: HTML基礎確認</h1>
-<img src="https://example.com/image.jpg" width="300" height="200" alt="風景写真">
-    <div>
-        <h2>📝 課題1: 自己紹介セクション作成</h2>
-        <p><strong>指示:</strong> 下記のHTMLコメント部分に、あなたの自己紹介を書いてください。</p>
-        <!-- ここに自己紹介のHTMLを書いてください
-        例:
-        <h3>自己紹介</h3>
-        <p>名前: 山田太郎</p>
-        <p>職業: 大学生</p>
-        <p>趣味: プログラミング、読書</p>
-        -->
-        <p>✅ 完了したら、この課題は終了です</p>
-    </div>
 
-    <div>
-        <h2>📋 課題2: リスト作成</h2>
-        <p><strong>指示:</strong> 好きな食べ物を5つ、番号付きリスト（ol）で作成してください。</p>
-        <!-- ここに好きな食べ物のリストを作成してください -->
-    </div>
+    <h3>お薦めな食べ物を紹介</h3>
+    <img src="kaihimo.svg" width="300" height="200" alt="貝ひも">
+    <img src="kyuuri.svg" width="300" height="200" alt="きゅうり">
+    <ol>
+        <li>貝ひも</li>
+        <li>きゅうり</li>
+    </ol>
 
-    <div>
-        <h2>🔗 課題3: リンク作成</h2>
-        <p><strong>指示:</strong> 以下のリンクを作成してください：</p>
-        <ul>
-            <li>Google（新しいタブで開く）</li>
-            <li>GitHub（新しいタブで開く）</li>
-        </ul>
-        <!-- ここにリンクを作成してください -->
-    </div>
+    <a href="second.html">2ページ目へ</a>
+
+    <script>
+        // 1秒ごとに現在時刻を表示する
+        function showClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, "0");
+            const m = String(now.getMinutes()).padStart(2, "0");
+            const s = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("clock").textContent = h + ":" + m + ":" + s;
+        }
+        showClock();
+        setInterval(showClock, 1000);
+    </script>
 </body>
 </html>
